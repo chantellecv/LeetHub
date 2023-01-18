@@ -1,18 +1,19 @@
 class Solution {
     public boolean isAnagram(String s, String t) {
-        int[] alphabet = new int[26];
-        
-        for (int i = 0; i<s.length(); i++){
-            alphabet[s.charAt(i) - 97]++;
+        int[] alpha = new int[26];
+
+        for (char i:s.toCharArray()){
+            alpha[i-97]++;
         }
-        for (int i = 0; i<t.length(); i++){
-            alphabet[t.charAt(i) - 97]--;
+        for (char j:t.toCharArray()){
+            alpha[j-97]--;
         }
-        for (int i = 0; i<alphabet.length; i++){
-            if (alphabet[i] != 0){
+        for (int k:alpha){
+            if (k!=0){
                 return false;
-            }   
+            }
         }
         return true;
+        
     }
 }
