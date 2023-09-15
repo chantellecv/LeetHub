@@ -3,7 +3,7 @@ name: Sync Leetcode
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 8 * * 6"
+    - cron: "0 8 * * *"
 
 jobs:
   build:
@@ -19,4 +19,4 @@ jobs:
           destination-folder: my-folder
           verbose: true
           commit-header: '[LeetCode Sync]'
-          
+
